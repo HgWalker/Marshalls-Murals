@@ -1,0 +1,48 @@
+using System;
+
+namespace MarshallsRevenue
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Declarations
+            int Interior = 0; //Holds the number of interior murals
+            int Exterior = 0; //Holds the number of exterior murals
+            int ISum = 0; //Holds the revenue of the interior murals
+            int ESum = 0; //Holds the revenue of the exterior murals
+            int SumTotal = 0; //Holds the total revenue of all the murals
+
+            Console.WriteLine("Please enter the number of interior murals you would like to schedule to be painted");
+
+            Interior = Convert.ToInt32(Console.ReadLine()); //User inputs the number of interior murals
+
+            ISum = Interior * 500; //Calculates the revenue of the interior murals
+
+            Console.WriteLine("Please enter the number of exterior murals you would like schedule to be painted");
+
+            Exterior = Convert.ToInt32(Console.ReadLine()); //User inputs the number of thr exterior murals
+
+            ESum = Exterior * 750; //Calculates the revenue of the exterior murals
+
+            SumTotal = ISum + ESum; //Calculates the total revenue of all the murals
+
+            if (Interior > Exterior) //If there are more interior than exterior murals
+            {
+                Console.WriteLine("You have scheduled more interior murals than exterior murals");
+            }
+
+            else if (Interior < Exterior) //If there are less interior than exterior murals
+            {
+                Console.WriteLine("You have scheduled more exterior murals than interior murals");
+            }
+
+            else if (Interior == Exterior) //If there are the same amount of interior and exterior murals
+            {
+                Console.WriteLine("You have scheduled the same number of interior murals as exterior murals");
+            }
+
+            Console.WriteLine("The total revenue of the murals is $" + SumTotal); //Displays total expected revenue
+        }
+    }
+}
